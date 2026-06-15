@@ -1,0 +1,51 @@
+import {
+  faCartShopping,
+  faChartColumn,
+  faCloud,
+  faCode,
+  faCubes,
+  faFileLines,
+  faHandshakeAngle,
+  faInfinity,
+  faLaptop,
+  faLightbulb,
+  faMicrochip,
+  faPalette,
+  faRocket,
+} from '@fortawesome/free-solid-svg-icons'
+
+export const nav = {
+  main: [
+    { label: 'Inicio', to: '/' },
+    { label: 'Soluciones Empresariales', to: '/soluciones-empresariales' },
+    { label: 'Emprendedores M1B', to: '/emprendedores-m1b' },
+    { label: 'Blog / Recursos', to: '/blog-recursos' },
+    { label: 'Contacto', to: '/contacto' },
+  ],
+  soluciones: [
+    { label: 'Software a la medida', to: '/soluciones-empresariales/software-a-la-medida', icon: faCode },
+    { label: 'Nube', to: '/soluciones-empresariales/nube', icon: faCloud },
+    { label: 'DevOps', to: '/soluciones-empresariales/devops', icon: faInfinity },
+    { label: 'Data Science', to: '/soluciones-empresariales/data-science', icon: faChartColumn },
+    { label: 'IA', to: '/soluciones-empresariales/ia', icon: faMicrochip },
+    { label: 'Blockchain', to: '/soluciones-empresariales/blockchain', icon: faCubes },
+    { label: 'Consultoría Empresarial', to: '/soluciones-empresariales/consultoria-empresarial', icon: faLightbulb },
+    { label: 'Documentación', to: '/soluciones-empresariales/documentacion', icon: faFileLines },
+  ],
+  emprendedores: [
+    { label: 'Sitios Web Profesionales', to: '/emprendedores-m1b/sitios-web-personalizados', icon: faLaptop },
+    { label: 'Tienda Online', to: '/emprendedores-m1b/tienda-online', icon: faCartShopping },
+    { label: 'Branding Digital', to: '/emprendedores-m1b/branding', icon: faPalette },
+    { label: 'Landing Pages', to: '/emprendedores-m1b/landing-page', icon: faRocket },
+    { label: 'IA', to: '/soluciones-empresariales/ia', icon: faMicrochip },
+    { label: 'Consultoría', to: '/emprendedores-m1b/consultoria', icon: faHandshakeAngle },
+  ],
+  blog: [
+    { label: 'Blog / Recursos', to: '/blog-recursos' },
+    { label: 'Preguntas frecuentes', to: '/blog-recursos/preguntas-frecuentes' },
+    { label: 'Nosotros', to: '/blog-recursos/nosotros' },
+    { label: 'Historia', to: '/blog-recursos/historia' },
+    { label: 'Términos y condiciones', to: '/blog-recursos/terminos-y-condiciones' },
+    { label: 'Aviso de privacidad', to: '/blog-recursos/aviso-de-privacidad' },
+  ],
+}
