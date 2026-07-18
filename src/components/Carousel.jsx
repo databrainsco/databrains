@@ -2,8 +2,10 @@ import React, { useRef, useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
-export default function Carousel({ children, variant = 'light' }) {
+export default function Carousel({ children, variant = 'light', slideClassName, gapClassName = 'gap-4' }) {
   const isDark = variant === 'dark'
+  const defaultSlideClassName =
+    'w-[82%] flex-shrink-0 snap-start sm:w-[46%] md:min-w-[280px] md:max-w-[300px] md:flex-shrink-0 lg:min-w-[260px] xl:min-w-[300px]'
   const scroller = useRef(null)
   const [pages, setPages] = useState(1)
   const [active, setActive] = useState(0)
@@ -39,26 +41,31 @@ export default function Carousel({ children, variant = 'light' }) {
           type="button"
           aria-label="Anterior"
           onClick={() => scroll('left')}
-          className={`hidden h-11 w-11 flex-shrink-0 items-center justify-center rounded-full shadow-sm transition duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 md:inline-flex ${
+          className={`hidden h-11 w-11 flex-shrink-0 items-center justify-center rounded-full shadow-md transition duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 md:inline-flex ${
             isDark
-              ? 'border border-white/30 bg-white/15 text-white hover:bg-white/25 focus-visible:ring-white'
+              ? 'bg-white text-databrains-slate hover:bg-white/90 focus-visible:ring-white'
               : 'border border-databrains-aqua/30 bg-white text-databrains-slate hover:text-databrains-teal focus-visible:ring-databrains-coral'
           }`}
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
-        <div ref={scroller} className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-1 py-3">
+        <div
+          ref={scroller}
+          className={`flex flex-1 overflow-x-auto scroll-smooth px-1 py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-x snap-mandatory ${gapClassName}`}
+        >
           {React.Children.map(children, (child, i) => (
-            <div key={i} className="min-w-[260px] max-w-[320px] snap-start md:min-w-[300px]">{child}</div>
+            <div key={i} className={slideClassName ?? defaultSlideClassName}>
+              {child}
+            </div>
           ))}
         </div>
         <button
           type="button"
           aria-label="Siguiente"
           onClick={() => scroll('right')}
-          className={`hidden h-11 w-11 flex-shrink-0 items-center justify-center rounded-full shadow-sm transition duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 md:inline-flex ${
+          className={`hidden h-11 w-11 flex-shrink-0 items-center justify-center rounded-full shadow-md transition duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 md:inline-flex ${
             isDark
-              ? 'border border-white/30 bg-white/15 text-white hover:bg-white/25 focus-visible:ring-white'
+              ? 'bg-white text-databrains-slate hover:bg-white/90 focus-visible:ring-white'
               : 'border border-databrains-aqua/30 bg-white text-databrains-slate hover:text-databrains-teal focus-visible:ring-databrains-coral'
           }`}
         >

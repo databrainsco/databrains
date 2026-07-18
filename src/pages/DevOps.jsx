@@ -20,7 +20,7 @@ import {
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/devops/hero.jpg'
-import ctaImage from '../assets/images/pages/devops/cta.jpg'
+import ctaImage from '../assets/images/pages/devops/cta-person.png'
 import beforeImage from '../assets/images/pages/devops/before.jpg'
 import afterImage from '../assets/images/pages/devops/after.jpg'
 import carousel1 from '../assets/images/pages/devops/carousel-1.jpg'
@@ -79,11 +79,11 @@ export default function DevOps() {
       />
       <main className="overflow-x-hidden bg-white">
         <SolutionHero
-          label="DevOps"
-          title="Agilidad, calidad y entrega continua"
+          title="DevOps"
+          subtitle="Agilidad, calidad y entrega continua"
           description="Implementamos prácticas y herramientas DevOps para automatizar procesos, mejorar la colaboración entre equipos y acelerar la entrega de software con calidad y confiabilidad."
           heroImage={heroImage}
-          heroAlt="Profesional trabajando con múltiples monitores de código"
+          heroAlt="Profesional programando en dos monitores con dashboards DevOps"
           badgeIcon={faInfinity}
         />
         <ServicesCarouselSection
@@ -98,23 +98,24 @@ export default function DevOps() {
           beforeItems={[
             'Despliegues manuales y lentos',
             'Errores frecuentes en producción',
-            'Falta de visibilidad del estado de los sistemas',
-            'Equipos desconectados',
+            'Falta de visibilidad en los entornos',
+            'Retrasos para entregar nuevas funcionalidades',
           ]}
           afterItems={[
             'Despliegues automáticos y confiables',
-            'Menos errores y rollbacks rápidos',
-            'Monitoreo y alertas en tiempo real',
-            'Colaboración fluida entre equipos',
+            'Menos errores, mayor estabilidad',
+            'Visibilidad completa en tiempo real',
+            'Entregas más rápidas y usuarios más felices',
           ]}
         />
         <BenefitsGrid title="Beneficios de adoptar DevOps" benefits={benefits} />
         <FinalCTABlock
           title="¿Listo para llevar tu entrega de software al siguiente nivel?"
-          description="Te acompañamos en la implementación DevOps de principio a fin."
+          description="Te ayudamos a implementar DevOps de punta a punta, adaptado a las necesidades de tu negocio."
           ctaLabel="Hablemos de tu proyecto"
           image={ctaImage}
-          floatingIcons={[faInfinity, faCloud, faChartColumn, faShieldHalved]}
+          imageVariant="cutout"
+          floatingIcons={[faInfinity, faChartColumn, faCloud, faShieldHalved]}
         />
       </main>
     </>

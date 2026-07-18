@@ -24,7 +24,7 @@ import {
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/software/hero.jpg'
-import ctaImage from '../assets/images/pages/software/cta.jpg'
+import ctaImage from '../assets/images/pages/software/cta.png'
 import carousel1 from '../assets/images/pages/software/carousel-1.jpg'
 import carousel2 from '../assets/images/pages/software/carousel-2.jpg'
 import carousel3 from '../assets/images/pages/software/carousel-3.jpg'
@@ -107,6 +107,7 @@ export default function SoftwareALaMedida() {
           description="Cuéntanos tu idea y la convertiremos en una solución que impulse tu negocio."
           ctaLabel="Hablemos de tu proyecto"
           image={ctaImage}
+          cutout
           floatingIcons={[faGear, faCloud, faMobileScreen, faCode]}
         />
       </main>

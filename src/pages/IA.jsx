@@ -9,6 +9,7 @@ import {
   faEye,
   faFileLines,
   faMicrochip,
+  faRobot,
   faRocket,
   faShieldHalved,
   faTriangleExclamation,
@@ -22,7 +23,7 @@ import {
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/ia/hero.jpg'
-import ctaImage from '../assets/images/pages/ia/cta.jpg'
+import ctaImage from '../assets/images/pages/ia/cta-person.png'
 import beforeImage from '../assets/images/pages/ia/before.jpg'
 import afterImage from '../assets/images/pages/ia/after.jpg'
 import carousel1 from '../assets/images/pages/ia/carousel-1.jpg'
@@ -60,7 +61,7 @@ export default function IA() {
           title="Inteligencia que impulsa resultados"
           description="Desarrollamos e implementamos soluciones de inteligencia artificial que automatizan procesos, optimizan decisiones y generan valor real para tu negocio."
           heroImage={heroImage}
-          heroAlt="Mujer observando visualización de cerebro digital con IA"
+          heroAlt="Profesional interactuando con una red neuronal de inteligencia artificial"
           badgeIcon={faMicrochip}
         />
         <ServicesCarouselSection
@@ -72,11 +73,13 @@ export default function IA() {
           title="El poder de la IA, en resultados reales"
           beforeImage={beforeImage}
           afterImage={afterImage}
+          beforeAlt="Profesional estresado por procesos manuales antes de implementar IA"
+          afterAlt="Profesional productivo después de implementar inteligencia artificial"
           beforeItems={[
             'Procesos manuales y repetitivos',
             'Decisiones basadas en intuición',
             'Pérdida de tiempo y recursos',
-            'Datos infrautilizados',
+            'Datos subutilizados o desconectados',
           ]}
           afterItems={[
             'Automatización inteligente',
@@ -85,13 +88,14 @@ export default function IA() {
             'Datos conectados que generan valor',
           ]}
         />
-        <BenefitsGrid title="Beneficios de implementar IA" benefits={benefits} />
+        <BenefitsGrid title="Beneficios de implementar IA" benefits={benefits} paleBlueBg />
         <FinalCTABlock
           title="¿Quieres implementar IA en tu empresa?"
           description="Te ayudamos a convertir tus datos en soluciones inteligentes que generan impacto."
           ctaLabel="Hablemos de tu proyecto"
           image={ctaImage}
-          floatingIcons={[faBrain, faComments, faChartColumn, faDatabase]}
+          imageVariant="cutout"
+          floatingIcons={[faBrain, faRobot, faChartColumn, faDatabase]}
         />
       </main>
     </>

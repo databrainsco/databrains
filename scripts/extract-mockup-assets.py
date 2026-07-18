@@ -2,6 +2,7 @@
 """Extract page assets from design mockup PNGs."""
 from PIL import Image
 import os
+import sys
 
 ASSETS_SRC = '/Users/michi/.cursor/projects/Users-michi-Desktop-databrainsdefinitivo/assets'
 OUT_BASE = '/Users/michi/Desktop/databrainsdefinitivo/src/assets/images/pages'
@@ -27,11 +28,17 @@ def carousel_boxes(w, count):
     ]
 
 
-def extract_carousel(im, y1, count, out_dir, scale=8):
+def extract_carousel(im, y1, count, out_dir, scale=8, height=None):
     boxes = carousel_boxes(im.width, count)
-    y2 = y1 + CAROUSEL_PHOTO_H
+    y2 = y1 + (height if height is not None else CAROUSEL_PHOTO_H)
     for i, (l, r) in enumerate(boxes, 1):
         save(im.crop((l, y1, r, y2)), f'{out_dir}/carousel-{i}.jpg', scale=scale)
+
+
+def extract_carousel_boxes(im, boxes, out_dir, scale=3):
+    for i, box in enumerate(boxes, 1):
+        crop_box = box(im.width, im.height) if callable(box) else box
+        save(im.crop(crop_box), f'{out_dir}/carousel-{i}.jpg', scale=scale)
 
 
 def split_strip(im, box, count, out_dir, prefix, scale=6, photo_frac=0.38):
@@ -60,8 +67,21 @@ def extract(page, cfg):
         box = cfg['cta'](w, h) if callable(cfg['cta']) else cfg['cta']
         save(im.crop(box), f'{out}/cta.jpg', scale=2)
 
-    if 'carousel' in cfg:
-        extract_carousel(im, cfg['carousel']['y'], cfg['carousel']['count'], out)
+    if 'carousel_boxes' in cfg:
+        boxes = cfg['carousel_boxes']
+        if callable(boxes):
+            boxes = boxes(w, h)
+        extract_carousel_boxes(im, boxes, out, scale=cfg.get('carousel_scale', 3))
+    elif 'carousel' in cfg:
+        carousel = cfg['carousel']
+        extract_carousel(
+            im,
+            carousel['y'],
+            carousel['count'],
+            out,
+            scale=carousel.get('scale', 8),
+            height=carousel.get('height'),
+        )
 
     for key in ('before', 'after', 'results'):
         if key in cfg:
@@ -113,14 +133,18 @@ PAGES = {
         'after': lambda w, h: (307, 648, 427, 768),
     },
     'software': {
-        'file': '03-Soluciones_Empresariales_-_2Software_A_la_Medida-fc71688d-fa1a-4294-a1fe-8d510f68103a.png',
-        'hero': lambda w, h: (175, 168, w - 6, 276),
-        'cta': lambda w, h: (int(w * 0.53), 884, w - 4, 970),
-        'carousel': {'y': 348, 'count': 5},
+        'file': '03-Soluciones_Empresariales_-_2Software_A_la_Medida-3f2f9e3c-c4a6-40db-8add-30b7865ad873.png',
+        'hero': lambda w, h: (248, 158, w - 14, 316),
+        'cta': lambda w, h: (268, 838, w - 8, 955),
+        'carousel_boxes': lambda w, h: [
+            (int(54 + i * (w - 109) / 5 + 4), 340, int(54 + (i + 1) * (w - 109) / 5 - 4), 378)
+            for i in range(5)
+        ],
+        'carousel_scale': 3,
     },
     'blockchain': {
         'file': '03-Soluciones_Empresariales_-_Blockchain-a1d89794-17b3-4770-9119-cb9e974840c2.png',
-        'hero': lambda w, h: (175, 168, w - 6, 276),
+        'hero': lambda w, h: (285, 172, w - 8, 318),
         'cta': lambda w, h: (int(w * 0.54), 892, w - 4, 978),
         'carousel': {'y': 348, 'count': 6},
         'audience': {'y': (718, 778), 'count': 5},
@@ -140,5 +164,12 @@ PAGES = {
 
 
 if __name__ == '__main__':
-    for page, cfg in PAGES.items():
+    pages = PAGES.items()
+    if len(sys.argv) > 1:
+        name = sys.argv[1]
+        if name not in PAGES:
+            print(f'Unknown page: {name}. Available: {", ".join(PAGES)}')
+            sys.exit(1)
+        pages = [(name, PAGES[name])]
+    for page, cfg in pages:
         extract(page, cfg)

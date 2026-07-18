@@ -2,13 +2,19 @@ import React from 'react'
 import {
   faBrain,
   faCalendarDays,
+  faCircleCheck,
+  faClock,
   faChartColumn,
   faChartLine,
   faDatabase,
+  faDollarSign,
   faEye,
+  faGaugeHigh,
   faGear,
+  faLightbulb,
   faMagnifyingGlassChart,
   faRobot,
+  faShieldHalved,
   faTableCellsLarge,
   faTrophy,
   faBullseye,
@@ -18,54 +24,62 @@ import {
   SolutionHero,
   ChallengesGrid,
   ServicesCarouselSection,
-  PhotoCardGrid,
-  BenefitsGrid,
+  BusinessIntelligenceCarousel,
+  BenefitsRadialSection,
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/datascience/hero.jpg'
-import ctaImage from '../assets/images/pages/datascience/cta.jpg'
+import ctaImage from '../assets/images/pages/datascience/cta-person.png'
 import bi1 from '../assets/images/pages/datascience/bi-1.jpg'
 import bi2 from '../assets/images/pages/datascience/bi-2.jpg'
 import bi3 from '../assets/images/pages/datascience/bi-3.jpg'
 import bi4 from '../assets/images/pages/datascience/bi-4.jpg'
+import bi5 from '../assets/images/pages/datascience/bi-5.jpg'
+import bi6 from '../assets/images/pages/datascience/bi-6.jpg'
 import carousel1 from '../assets/images/pages/datascience/carousel-1.jpg'
 import carousel2 from '../assets/images/pages/datascience/carousel-2.jpg'
 import carousel3 from '../assets/images/pages/datascience/carousel-3.jpg'
 import carousel4 from '../assets/images/pages/datascience/carousel-4.jpg'
 import carousel5 from '../assets/images/pages/datascience/carousel-5.jpg'
+import carousel6 from '../assets/images/pages/datascience/carousel-6.jpg'
+import carousel7 from '../assets/images/pages/datascience/carousel-7.jpg'
+import carousel8 from '../assets/images/pages/datascience/carousel-8.jpg'
 
 const challenges = [
-  { title: 'Datos dispersos', description: 'Información en múltiples sistemas sin conexión.', icon: faDatabase },
-  { title: 'Reportes manuales', description: 'Horas perdidas generando reportes a mano.', icon: faTableCellsLarge },
-  { title: 'Poca visibilidad', description: 'Sin claridad sobre el estado real del negocio.', icon: faEye },
-  { title: 'Decisiones lentas', description: 'Esperar días o semanas para obtener insights.', icon: faCalendarDays },
-  { title: 'Información no confiable', description: 'Datos inconsistentes que generan dudas.', icon: faChartColumn },
-  { title: 'Dificultad para detectar oportunidades', description: 'Tendencias y patrones que pasan desapercibidos.', icon: faMagnifyingGlassChart },
+  { title: 'Datos dispersos', description: 'La información está en múltiples fuentes y sin integración.', icon: faDatabase },
+  { title: 'Reportes manuales', description: 'Procesos repetitivos que consumen tiempo y son propensos a errores.', icon: faTableCellsLarge },
+  { title: 'Poca visibilidad', description: 'Falta de dashboards e indicadores claros para el día a día.', icon: faEye },
+  { title: 'Decisiones lentas', description: 'La información llega tarde o no está disponible cuando se necesita.', icon: faClock },
+  { title: 'Información no confiable', description: 'Datos inconsistentes que afectan la credibilidad.', icon: faShieldHalved },
+  { title: 'Dificultad para detectar oportunidades', description: 'Se pierden patrones y tendencias clave para el crecimiento.', icon: faMagnifyingGlassChart },
 ]
 
 const dataSolutions = [
   { title: 'Integración y limpieza de datos', description: 'Unificamos y depuramos tus fuentes de datos para análisis confiable.', icon: faDatabase, image: carousel1 },
   { title: 'Dashboards ejecutivos', description: 'Tableros visuales con los KPIs que importan para tu negocio.', icon: faChartColumn, image: carousel2 },
   { title: 'Automatización de reportes', description: 'Reportes que se generan solos y llegan a quien los necesita.', icon: faRobot, image: carousel3 },
-  { title: 'Análisis descriptivo', description: 'Entiende qué pasó en tu negocio con análisis claros y accionables.', icon: faChartLine, image: carousel4 },
-  { title: 'Modelos predictivos', description: 'Anticipa tendencias y comportamientos con machine learning.', icon: faBrain, image: carousel5 },
+  { title: 'Análisis descriptivo', description: 'Entendemos qué pasó en tu negocio con métricas clave.', icon: faChartLine, image: carousel4 },
+  { title: 'Modelos predictivos', description: 'Anticipamos escenarios y comportamientos futuros con IA y ML.', icon: faBrain, image: carousel5 },
+  { title: 'Indicadores clave de negocio', description: 'Definimos y monitoreamos KPIs que impulsan resultados.', icon: faBullseye, image: carousel6 },
+  { title: 'Visualización de datos', description: 'Transformamos datos complejos en visuales simples y poderosas.', icon: faChartColumn, image: carousel7 },
+  { title: 'Detección de patrones y oportunidades', description: 'Identificamos insights escondidos que generan ventaja competitiva.', icon: faMagnifyingGlassChart, image: carousel8 },
 ]
 
 const biCards = [
-  { title: 'Toma de decisiones con datos', description: 'Basadas en evidencia, no en intuición.', icon: faBullseye, image: bi1 },
-  { title: 'Visibilidad operativa en tiempo real', description: 'Monitorea tu negocio al instante.', icon: faEye, image: bi2 },
-  { title: 'Proyecciones y pronósticos más claros', description: 'Anticipa el futuro con modelos confiables.', icon: faChartLine, image: bi3 },
-  { title: 'Detección de oportunidades de crecimiento', description: 'Encuentra nichos y tendencias emergentes.', icon: faMagnifyingGlassChart, image: bi4 },
-  { title: 'Optimización de costos', description: 'Identifica dónde ahorrar sin sacrificar calidad.', icon: faGear, image: carousel3 },
-  { title: 'Seguimiento de KPIs críticos', description: 'Métricas clave siempre a la vista.', icon: faTrophy, image: carousel5 },
+  { title: 'Toma de decisiones con datos', description: 'Decisiones más seguras y alineadas a objetivos estratégicos.', icon: faCircleCheck, image: bi1 },
+  { title: 'Visibilidad operativa en tiempo real', description: 'Monitorea tu negocio al instante y actúa con información actualizada.', icon: faEye, image: bi2 },
+  { title: 'Proyecciones y pronósticos más claros', description: 'Anticipa escenarios y planifica con mayor precisión.', icon: faChartLine, image: bi3 },
+  { title: 'Detección de oportunidades de crecimiento', description: 'Descubre segmentos, productos y mercados con mayor potencial.', icon: faLightbulb, image: bi4 },
+  { title: 'Optimización de costos y recursos', description: 'Reduce gastos innecesarios y mejora la rentabilidad.', icon: faDollarSign, image: bi5 },
+  { title: 'Seguimiento de KPIs críticos', description: 'Mide lo que importa y garantiza el cumplimiento de metas.', icon: faGaugeHigh, image: bi6 },
 ]
 
 const benefits = [
-  { title: 'Decisiones más precisas', description: 'Basadas en datos reales, no suposiciones.', icon: faBullseye },
-  { title: 'Mayor visibilidad', description: 'Claridad total sobre tu operación.', icon: faEye },
-  { title: 'Eficiencia operativa', description: 'Procesos optimizados con insights accionables.', icon: faGear },
-  { title: 'Mejor planeación', description: 'Estrategias fundamentadas en proyecciones confiables.', icon: faCalendarDays },
-  { title: 'Ventaja competitiva', description: 'Anticípate al mercado con analítica avanzada.', icon: faTrophy },
+  { title: 'Decisiones más precisas', description: 'Basadas en datos, no en suposiciones.' },
+  { title: 'Mejor planeación', description: 'Proyecciones confiables para anticiparse.' },
+  { title: 'Ventaja competitiva', description: 'Detecta oportunidades antes que el mercado.' },
+  { title: 'Eficiencia operativa', description: 'Optimiza procesos y reduce desperdicios.' },
+  { title: 'Mayor visibilidad', description: 'Claridad sobre lo que ocurre en la operación.' },
 ]
 
 export default function DataScience() {
@@ -77,11 +91,11 @@ export default function DataScience() {
       />
       <main className="overflow-x-hidden bg-white">
         <SolutionHero
-          label="Data Science"
-          title="Convierte tus datos en decisiones de negocio"
-          description="Te ayudamos a organizar, analizar y visualizar tus datos para que tomes mejores decisiones con menos incertidumbre y más claridad."
+          title="Data Science"
+          subtitle="Convierte tus datos en decisiones de negocio"
+          description="En DataBrains ayudamos a las empresas a organizar, analizar y visualizar sus datos para tomar mejores decisiones, identificar oportunidades y reducir la incertidumbre."
           heroImage={heroImage}
-          heroAlt="Profesional analizando dashboards de datos"
+          heroAlt="Analista de datos revisando dashboards en laptop y monitor"
           secondaryCta={{ label: 'Conoce nuestros casos', to: '/soluciones-empresariales' }}
         />
         <ChallengesGrid title="Retos comunes" items={challenges} />
@@ -90,18 +104,24 @@ export default function DataScience() {
           subtitle="Herramientas y metodologías para transformar tus datos en valor."
           items={dataSolutions}
         />
-        <PhotoCardGrid
+        <BusinessIntelligenceCarousel
           title="Inteligencia de negocios"
           subtitle="Con el análisis de datos adecuado, tu empresa gana claridad e inteligencia accionable."
           items={biCards}
         />
-        <BenefitsGrid title="Beneficios de implementar Data Science" benefits={benefits} lightBg={false} />
+        <BenefitsRadialSection
+          title="Beneficios de implementar Data Science"
+          centerTitle="Data Science"
+          centerSubtitle="Beneficios clave"
+          benefits={benefits}
+        />
         <FinalCTABlock
           title="Convierte tus datos en una ventaja real"
-          description="Hablemos de cómo la analítica puede transformar la forma en que operas y decides."
+          description="Te ayudamos a implementar soluciones de Data Science que impulsan mejores decisiones, eficiencia y crecimiento sostenible para tu negocio."
           ctaLabel="Hablemos de tu proyecto"
           image={ctaImage}
-          floatingIcons={[faChartColumn, faDatabase, faBrain]}
+          imageVariant="cutout"
+          cutoutImageSize="large"
         />
       </main>
     </>

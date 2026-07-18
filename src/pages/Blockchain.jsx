@@ -5,6 +5,7 @@ import {
   faEye,
   faShieldHalved,
   faFileContract,
+  faFilePen,
   faShip,
   faClipboardCheck,
   faFingerprint,
@@ -18,20 +19,21 @@ import {
   faCircleCheck,
   faLock,
   faDatabase,
+  faShareNodes,
 } from '@fortawesome/free-solid-svg-icons'
 import SEO from '../components/SEO'
 import {
   SolutionHero,
   IconFeatureGrid,
   ServicesCarouselSection,
-  NumberedSteps,
+  ProcessInfographic,
   BenefitsGrid,
-  AudiencePhotoGrid,
+  AudienceCarousel,
   ResultsSplitSection,
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/blockchain/hero.jpg'
-import ctaImage from '../assets/images/pages/blockchain/cta.jpg'
+import ctaImage from '../assets/images/pages/blockchain/cta-person.png'
 import resultsImage from '../assets/images/pages/blockchain/results.jpg'
 import carousel1 from '../assets/images/pages/blockchain/carousel-1.jpg'
 import carousel2 from '../assets/images/pages/blockchain/carousel-2.jpg'
@@ -62,10 +64,31 @@ const businessUses = [
 ]
 
 const howItWorks = [
-  { title: 'Se genera una transacción', description: 'Un evento o acción se registra como transacción digital.', icon: faFileContract },
-  { title: 'Se valida por reglas', description: 'La red verifica que cumple las condiciones establecidas.', icon: faNetworkWired },
-  { title: 'Se registra en un bloque', description: 'La transacción se agrupa y sella en un bloque inmutable.', icon: faCube },
-  { title: 'Queda compartido', description: 'Todos los participantes autorizados acceden al registro.', icon: faShieldHalved },
+  {
+    title: 'Se genera una transacción o evento',
+    description: 'Se registra una acción o información relevante en el proceso.',
+    icon: faFilePen,
+  },
+  {
+    title: 'Se valida por reglas y nodos',
+    description: 'Una red de participantes verifica la información según reglas acordadas.',
+    icon: faNetworkWired,
+  },
+  {
+    title: 'Se registra en un bloque',
+    description: 'La información validada se agrupa en un bloque junto con otras transacciones.',
+    icon: faCube,
+  },
+  {
+    title: 'Se comparte en la cadena de bloques',
+    description: 'El bloque se incorpora a la cadena y queda disponible para los participantes autorizados.',
+    icon: faShareNodes,
+  },
+  {
+    title: 'No se puede modificar',
+    description: 'Una vez registrado, el historial es inmutable y verificable por cualquier actor con permisos.',
+    icon: faLock,
+  },
 ]
 
 const benefits = [
@@ -77,11 +100,11 @@ const benefits = [
 ]
 
 const audience = [
-  { title: 'Empresas con cadena de suministro', description: 'Que necesitan trazabilidad de productos y materiales.', image: audience1 },
-  { title: 'Organizaciones que emiten certificados', description: 'Que requieren documentos verificables y confiables.', image: audience2 },
-  { title: 'Empresas con trazabilidad documental', description: 'Que manejan expedientes y registros críticos.', image: audience3 },
-  { title: 'Proyectos con múltiples actores', description: 'Donde varias partes deben validar información.', image: audience4 },
-  { title: 'Negocios que buscan procesos confiables', description: 'Que quieren reducir errores y aumentar la confianza.', image: audience5 },
+  { title: 'Empresas con cadena de suministro', description: 'Que necesitan trazabilidad de productos y materiales.', image: audience1, icon: faShip },
+  { title: 'Organizaciones que emiten certificados', description: 'Que requieren documentos verificables y confiables.', image: audience2, icon: faFileContract },
+  { title: 'Empresas con trazabilidad documental', description: 'Que manejan expedientes y registros críticos.', image: audience3, icon: faClipboardList },
+  { title: 'Proyectos con múltiples actores', description: 'Donde varias partes deben validar información.', image: audience4, icon: faUsers },
+  { title: 'Negocios que buscan procesos confiables', description: 'Que quieren reducir errores y aumentar la confianza.', image: audience5, icon: faHandshake },
 ]
 
 const results = [
@@ -117,15 +140,16 @@ export default function Blockchain() {
           subtitle="Aplicaciones prácticas que generan valor real en tu operación."
           items={businessUses}
         />
-        <NumberedSteps title="¿Cómo funciona?" steps={howItWorks} />
-        <BenefitsGrid title="Beneficios para tu empresa" benefits={benefits} />
-        <AudiencePhotoGrid title="¿Para quién es esta solución?" items={audience} />
+        <ProcessInfographic title="¿Cómo funciona?" steps={howItWorks} />
+        <BenefitsGrid title="Beneficios para tu empresa" benefits={benefits} paleBlueBg />
+        <AudienceCarousel title="¿Para quién es esta solución?" items={audience} />
         <ResultsSplitSection image={resultsImage} items={results} />
         <FinalCTABlock
           title="¿Quieres explorar blockchain con un enfoque práctico para tu negocio?"
           description="Te ayudamos a identificar casos de uso reales y a implementarlos paso a paso."
           ctaLabel="Hablemos de tu proyecto"
           image={ctaImage}
+          imageVariant="cutout"
           floatingIcons={[faCube, faShieldHalved, faLock, faDatabase]}
         />
       </main>

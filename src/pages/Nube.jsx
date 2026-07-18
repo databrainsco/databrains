@@ -18,7 +18,7 @@ import {
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/nube/hero.jpg'
-import ctaImage from '../assets/images/pages/nube/cta.jpg'
+import ctaImage from '../assets/images/pages/nube/cta-person.png'
 import carousel1 from '../assets/images/pages/nube/carousel-1.jpg'
 import carousel2 from '../assets/images/pages/nube/carousel-2.jpg'
 import carousel3 from '../assets/images/pages/nube/carousel-3.jpg'
@@ -88,11 +88,11 @@ export default function Nube() {
       />
       <main className="overflow-x-hidden bg-white">
         <SolutionHero
-          label="Nube"
-          title="Escalabilidad, seguridad y rendimiento sin límites"
+          title="Nube"
+          subtitle="Escalabilidad, seguridad y rendimiento sin límites"
           description="Te ayudamos a diseñar, migrar y optimizar tu infraestructura en la nube para que tu negocio sea más ágil, seguro y rentable."
           heroImage={heroImage}
-          heroAlt="Sala de servidores con icono de nube"
+          heroAlt="Sala de servidores con red de conexiones en la nube"
           badgeIcon={faCloud}
         />
         <ServicesCarouselSection
@@ -106,13 +106,14 @@ export default function Nube() {
           checklist={biChecklist}
           stats={biStats}
         />
-        <BenefitsGrid title="Beneficios de trabajar en la nube" benefits={benefits} />
+        <BenefitsGrid title="Beneficios de trabajar en la nube" benefits={benefits} paleBlueBg />
         <FinalCTABlock
           title="Construyamos juntos tu camino a la nube"
           description="Te acompañamos en cada etapa para que obtengas el máximo valor de la nube."
           ctaLabel="Hablemos de tu proyecto"
           image={ctaImage}
-          floatingIcons={[faCloud, faShieldHalved, faDatabase]}
+          imageVariant="cutout"
+          floatingIcons={[faCloud, faShieldHalved, faChartColumn, faDatabase]}
         />
       </main>
     </>
