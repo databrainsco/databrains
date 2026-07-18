@@ -48,8 +48,14 @@ export function SolutionHero({ label, title, subtitle, description, heroImage, h
           )}
           <div className="mt-3 h-1 w-10 rounded-full bg-databrains-aqua lg:mt-5 lg:w-14" />
           <p className="mt-5 max-w-[520px] text-[13px] leading-6 text-databrains-slate/80 lg:text-lg lg:leading-8">{description}</p>
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row lg:mt-8">
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:mt-8">
             <HeroCTAButton label={ctaLabel} variant={ctaVariant} />
+            <Link
+              to="/"
+              className="inline-flex items-center justify-center rounded-md border border-databrains-slate/15 bg-white px-5 py-3 text-xs font-extrabold text-databrains-slate shadow-sm transition duration-300 hover:border-databrains-teal/40 hover:text-databrains-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-databrains-teal focus-visible:ring-offset-2 lg:px-8 lg:py-4 lg:text-base"
+            >
+              Volver al inicio
+            </Link>
             {secondaryCta && (
               <Link
                 to={secondaryCta.to}

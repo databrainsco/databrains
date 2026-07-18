@@ -69,31 +69,31 @@ export const enterpriseServices = [
 export const entrepreneurServices = [
   {
     title: 'Sitios Web personalizados',
-    description: 'Sitios profesionales, rápidos y alineados con la identidad de cada negocio.',
+    description: 'Un sitio profesional, rápido y alineado con la identidad de tu negocio.',
     icon: faGlobe,
     to: '/emprendedores-m1b/sitios-web-personalizados',
   },
   {
     title: 'Tienda online',
-    description: 'E-commerce listo para vender, comunicar confianza y ordenar la operación digital.',
+    description: 'Tu e-commerce listo para vender, generar confianza y ordenar tu operación digital.',
     icon: faShop,
     to: '/emprendedores-m1b/tienda-online',
   },
   {
     title: 'Branding',
-    description: 'Identidad visual, narrativa y presencia de marca para competir con claridad.',
+    description: 'Tu identidad visual y narrativa de marca, para que te vean con claridad y confianza.',
     icon: faPalette,
     to: '/emprendedores-m1b/branding',
   },
   {
     title: 'Landing Page',
-    description: 'Páginas enfocadas en conversión para campañas, lanzamientos y captación de leads.',
+    description: 'Una página enfocada en conversión para tus campañas, lanzamientos y captación de clientes.',
     icon: faRocket,
     to: '/emprendedores-m1b/landing-page',
   },
   {
     title: 'Consultoría',
-    description: 'Guía práctica para priorizar tecnología, ventas digitales y crecimiento sostenible.',
+    description: 'Te acompañamos a priorizar tecnología, ventas digitales y el crecimiento de tu negocio.',
     icon: faLayerGroup,
     to: '/emprendedores-m1b/consultoria',
   },

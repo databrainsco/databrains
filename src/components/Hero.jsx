@@ -4,7 +4,18 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-export default function Hero({ eyebrow, title, description, primaryCta, secondaryCta, imagePlaceholder, decorative, children }) {
+export default function Hero({
+  eyebrow,
+  title,
+  description,
+  primaryCta,
+  secondaryCta,
+  image,
+  imageAlt = '',
+  imagePlaceholder,
+  decorative,
+  children,
+}) {
   return (
     <section className="relative overflow-hidden px-6 py-14 lg:px-12 lg:py-20">
       <div className="absolute left-0 top-10 h-56 w-56 rounded-full bg-databrains-paleCyan/60 blur-3xl" aria-hidden="true" />
@@ -43,7 +54,12 @@ export default function Hero({ eyebrow, title, description, primaryCta, secondar
         </div>
         <div className="relative">
           {decorative}
-          {imagePlaceholder ? (
+          {image ? (
+            <div className="overflow-hidden rounded-3xl border border-databrains-aqua/25 shadow-[0_18px_40px_rgba(49,69,78,0.12)]">
+              <img src={image} alt={imageAlt} className="h-[360px] w-full object-cover object-center" />
+              <div className="h-2.5 bg-gradient-to-r from-databrains-teal to-databrains-aqua" />
+            </div>
+          ) : imagePlaceholder ? (
             <ImagePlaceholder height="360px" {...imagePlaceholder} />
           ) : (
             <ImagePlaceholder

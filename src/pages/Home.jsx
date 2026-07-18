@@ -10,12 +10,14 @@ import {
   faChartLine,
   faClock,
   faCloud,
+  faCubes,
   faDatabase,
   faFolderOpen,
   faGaugeHigh,
   faHeadset,
   faInfinity,
   faLaptopCode,
+  faLightbulb,
   faLink,
   faPuzzlePiece,
   faRocket,
@@ -69,26 +71,43 @@ const services = [
     title: 'Creación de Software a la Medida y Páginas Web',
     description: 'Diseñamos y desarrollamos software y sitios web personalizados que se adaptan a tu negocio.',
     icon: faLaptopCode,
+    to: '/soluciones-empresariales/software-a-la-medida',
   },
   {
     title: 'Optimización en la nube',
     description: 'Migramos y optimizamos tu infraestructura en la nube para mejorar rendimiento, seguridad y reducir costos.',
     icon: faCloud,
+    to: '/soluciones-empresariales/nube',
   },
   {
     title: 'DevOps',
     description: 'Automatizamos procesos, integraciones y despliegues para entregar software con calidad y velocidad.',
     icon: faInfinity,
+    to: '/soluciones-empresariales/devops',
   },
   {
     title: 'DataScience',
     description: 'Transformamos datos en insights accionables para tomar decisiones inteligentes.',
     icon: faChartColumn,
+    to: '/soluciones-empresariales/data-science',
   },
   {
     title: 'IA',
     description: 'Implementamos soluciones de inteligencia artificial para optimizar tu negocio y escalar tu impacto.',
     icon: faWandMagicSparkles,
+    to: '/soluciones-empresariales/ia',
+  },
+  {
+    title: 'Blockchain',
+    description: 'Soluciones descentralizadas, trazabilidad y contratos inteligentes con enfoque práctico.',
+    icon: faCubes,
+    to: '/soluciones-empresariales/blockchain',
+  },
+  {
+    title: 'Consultoría empresarial',
+    description: 'Acompañamiento estratégico para tomar mejores decisiones tecnológicas.',
+    icon: faLightbulb,
+    to: '/soluciones-empresariales/consultoria-empresarial',
   },
 ]
 
@@ -315,10 +334,10 @@ function AboutSection() {
                 ))}
               </div>
             </div>
-            <div className="absolute bottom-7 left-24 rounded-xl bg-gradient-to-r from-databrains-teal to-databrains-aqua px-7 py-5 text-white shadow-xl">
-              <div className="flex items-center gap-4">
-                <FontAwesomeIcon icon={faUserGroup} className="text-3xl" />
-                <div className="font-heading text-lg font-bold leading-6">Enfoque Humano<br />+ Tech</div>
+            <div className="absolute bottom-5 right-4 rounded-xl bg-gradient-to-r from-databrains-teal to-databrains-aqua px-5 py-4 text-white shadow-xl sm:bottom-7 sm:right-7 sm:px-7 sm:py-5">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <FontAwesomeIcon icon={faUserGroup} className="text-2xl sm:text-3xl" />
+                <div className="font-heading text-base font-bold leading-6 sm:text-lg">Enfoque Humano<br />+ Tech</div>
               </div>
             </div>
           </div>
@@ -361,14 +380,21 @@ function ServicesSection() {
           <p className="mt-4 text-lg text-databrains-slate">Desde la idea hasta la innovación.</p>
         </div>
 
-        <div className="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((service) => (
             <article
               key={service.title}
               className="min-h-[260px] rounded-2xl border border-gray-200 bg-white p-7 shadow-[0_12px_28px_rgba(49,69,78,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(49,69,78,0.14)]"
             >
               <FontAwesomeIcon icon={service.icon} className="text-5xl text-databrains-teal" />
-              <h3 className="mt-8 font-heading text-lg font-extrabold leading-6 text-databrains-slate">{service.title}</h3>
+              <h3 className="mt-8 font-heading text-lg font-extrabold leading-6 text-databrains-slate">
+                <Link
+                  to={service.to}
+                  className="transition duration-300 hover:text-databrains-teal focus:outline-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-databrains-coral focus-visible:ring-offset-2"
+                >
+                  {service.title}
+                </Link>
+              </h3>
               <p className="mt-5 text-sm leading-6 text-databrains-slate/75">{service.description}</p>
               <div className="mt-7 h-1 w-9 rounded-full bg-databrains-coral" />
             </article>
@@ -380,6 +406,32 @@ function ServicesSection() {
           lo optimizamos en la nube, automatizamos tus procesos, analizamos tus datos y
           usamos <strong className="text-databrains-teal">IA para potenciar tu futuro.</strong>
         </p>
+      </div>
+    </section>
+  )
+}
+
+function EntrepreneursSection() {
+  return (
+    <section className="bg-[#ecf7f9] px-5 py-14 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-[900px] text-center">
+        <h2 className="font-heading text-3xl font-extrabold leading-tight text-databrains-slate md:text-4xl lg:text-[2.5rem]">
+          ¿Eres emprendedor?
+          <br />
+          ¿Quieres impulsar tu primer negocio?
+        </h2>
+        <div className="mx-auto mt-5 h-1 w-10 rounded-full bg-databrains-aqua" />
+        <p className="mt-6 text-lg leading-8 text-databrains-slate/80 md:text-xl">
+          Descubre <strong className="font-extrabold text-databrains-teal">My 1st Business</strong> y lleva tu
+          proyecto al éxito.
+        </p>
+        <Link
+          to="/emprendedores-m1b"
+          className="mt-8 inline-flex items-center justify-center gap-3 rounded-md bg-databrains-coral px-8 py-4 text-sm font-extrabold text-white shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-databrains-coral focus-visible:ring-offset-2 lg:text-base"
+        >
+          Llévame a M1B
+          <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
       </div>
     </section>
   )
@@ -474,6 +526,7 @@ export default function Home() {
         <MetricStrip />
         <AboutSection />
         <ServicesSection />
+        <EntrepreneursSection />
         <ContactCTA />
       </main>
     </>
