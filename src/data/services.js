@@ -92,6 +92,12 @@ export const entrepreneurServices = [
     to: '/emprendedores-m1b/landing-page',
   },
   {
+    title: 'IA',
+    description: 'Usa inteligencia artificial en tu negocio para ahorrar tiempo, crear contenido y atender mejor.',
+    icon: faBrain,
+    to: '/emprendedores-m1b/ia',
+  },
+  {
     title: 'Consultoría',
     description: 'Te acompañamos a priorizar tecnología, ventas digitales y el crecimiento de tu negocio.',
     icon: faLayerGroup,

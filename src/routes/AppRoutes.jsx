@@ -16,6 +16,7 @@ import SitiosWebPersonalizados from '../pages/SitiosWebPersonalizados'
 import TiendaOnline from '../pages/TiendaOnline'
 import Branding from '../pages/Branding'
 import LandingPage from '../pages/LandingPage'
+import IAM1B from '../pages/IAM1B'
 import ConsultoriaEmprendedores from '../pages/ConsultoriaEmprendedores'
 
 import BlogRecursos from '../pages/BlogRecursos'
@@ -47,6 +48,7 @@ export default function AppRoutes() {
       <Route path="/emprendedores-m1b/tienda-online" element={<TiendaOnline />} />
       <Route path="/emprendedores-m1b/branding" element={<Branding />} />
       <Route path="/emprendedores-m1b/landing-page" element={<LandingPage />} />
+      <Route path="/emprendedores-m1b/ia" element={<IAM1B />} />
       <Route path="/emprendedores-m1b/consultoria" element={<ConsultoriaEmprendedores />} />
 
       <Route path="/blog-recursos" element={<BlogRecursos />} />

@@ -37,7 +37,7 @@ export const nav = {
     { label: 'Tienda Online', to: '/emprendedores-m1b/tienda-online', icon: faCartShopping },
     { label: 'Branding Digital', to: '/emprendedores-m1b/branding', icon: faPalette },
     { label: 'Landing Pages', to: '/emprendedores-m1b/landing-page', icon: faRocket },
-    { label: 'IA', to: '/soluciones-empresariales/ia', icon: faMicrochip },
+    { label: 'IA', to: '/emprendedores-m1b/ia', icon: faMicrochip },
     { label: 'Consultoría', to: '/emprendedores-m1b/consultoria', icon: faHandshakeAngle },
   ],
   blog: [
