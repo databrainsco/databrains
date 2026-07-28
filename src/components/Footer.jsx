@@ -3,13 +3,9 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import DataBrainsLogo from './DataBrainsLogo'
+import NewsletterForm from './NewsletterForm'
 
 export default function Footer() {
-  const handleNewsletterSubmit = (event) => {
-    event.preventDefault()
-    // TODO: Conectar formulario de newsletter a backend, CRM o servicio de email marketing
-  }
-
   const socialLinks = [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/', icon: faLinkedin },
     { label: 'X / Twitter', href: 'https://twitter.com/', icon: faTwitter },
@@ -40,21 +36,7 @@ export default function Footer() {
 
         <div>
           <h2 className="mb-4 font-heading text-sm font-semibold text-databrains-slate">Suscríbete al blog</h2>
-          <form onSubmit={handleNewsletterSubmit} className="flex gap-3">
-            <label className="sr-only" htmlFor="newsletter-email">Correo electrónico</label>
-            <input
-              id="newsletter-email"
-              type="email"
-              placeholder="Tu correo electrónico"
-              className="min-w-0 flex-1 rounded border border-databrains-slate/30 px-4 py-3 text-sm outline-none transition duration-300 placeholder:text-databrains-slate/45 focus:border-databrains-teal"
-            />
-            <button
-              type="submit"
-              className="rounded-md bg-databrains-coral px-5 py-3 text-sm font-bold text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-databrains-coral"
-            >
-              Suscribirme
-            </button>
-          </form>
+          <NewsletterForm formKey="newsletter" />
         </div>
       </div>
 
