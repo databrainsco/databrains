@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const isGitHubPages = process.env.GITHUB_PAGES === 'true'
+// Custom domain (www.data-brains.net) is served from the site root.
+// Keep /databrains/ only if you explicitly need the github.io project path.
+const base = process.env.VITE_BASE || '/'
 
 export default defineConfig({
-  base: isGitHubPages ? '/databrains/' : '/',
+  base,
   plugins: [react()],
   server: {
     host: true,

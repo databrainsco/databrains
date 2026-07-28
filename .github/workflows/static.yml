@@ -37,7 +37,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          GITHUB_PAGES: true
+          VITE_BASE: /
 
       - name: Setup SPA fallback
         run: cp dist/index.html dist/404.html
