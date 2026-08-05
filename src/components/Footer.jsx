@@ -1,16 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import DataBrainsLogo from './DataBrainsLogo'
 import NewsletterForm from './NewsletterForm'
 
 export default function Footer() {
   const socialLinks = [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/', icon: faLinkedin },
-    { label: 'X / Twitter', href: 'https://twitter.com/', icon: faTwitter },
-    { label: 'GitHub', href: 'https://github.com/', icon: faGithub },
-    { label: 'YouTube', href: 'https://www.youtube.com/', icon: faYoutube },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/data-brains-87a008428/', icon: faLinkedin },
+    { label: 'X', href: 'https://x.com/databrainsagent', icon: faXTwitter },
   ]
 
   return (
