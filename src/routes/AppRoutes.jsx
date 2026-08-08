@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import PageSkeleton from '../components/PageSkeleton'
 
 const Home = lazy(() => import('../pages/Home'))
 const SolucionesEmpresariales = lazy(() => import('../pages/SolucionesEmpresariales'))
@@ -29,18 +30,9 @@ const AvisoPrivacidad = lazy(() => import('../pages/AvisoPrivacidad'))
 
 const Contacto = lazy(() => import('../pages/Contacto'))
 
-function RouteFallback() {
-  return (
-    <div className="flex min-h-[40vh] items-center justify-center bg-white" role="status" aria-live="polite">
-      <span className="sr-only">Cargando página…</span>
-      <div className="h-8 w-8 animate-pulse rounded-full bg-databrains-aqua/50" />
-    </div>
-  )
-}
-
 export default function AppRoutes() {
   return (
-    <Suspense fallback={<RouteFallback />}>
+    <Suspense fallback={<PageSkeleton />}>
       <Routes>
         <Route path="/" element={<Home />} />
 

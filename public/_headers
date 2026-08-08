@@ -1,11 +1,15 @@
 # Cloudflare Pages / Netlify style headers.
-# GitHub Pages ignores this file for HTTP headers, but if you put Cloudflare
-# in front of www.data-brains.net (orange cloud), create a Cache Rule:
-#   If URI Path starts with /assets/
-#   Then Edge TTL = 1 month, Browser TTL = 1 year, Cache Everything
+# GitHub Pages IGNORES this file for HTTP headers (always max-age=600).
+# To fix "Use efficient cache lifetimes", put Cloudflare in front of
+# www.data-brains.net (proxied DNS) and add a Cache Rule:
+#   If URI Path starts with /assets/ OR /fonts/
+#   Then Edge Cache TTL = 1 month, Browser TTL = 1 year, Cache Everything
 #
-# Hashed Vite assets are immutable; index.html should stay short-lived.
+# Hashed Vite assets under /assets/ are immutable across deploys.
 /assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
 /favicon.svg
