@@ -24,7 +24,7 @@ import {
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/software/hero.jpg'
-import ctaImage from '../assets/images/pages/software/cta.png'
+import ctaImage from '../assets/images/pages/software/cta.webp'
 import carousel1 from '../assets/images/pages/software/carousel-1.jpg'
 import carousel2 from '../assets/images/pages/software/carousel-2.jpg'
 import carousel3 from '../assets/images/pages/software/carousel-3.jpg'

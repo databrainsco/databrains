@@ -7,7 +7,7 @@ export default function ComingSoon({ title = 'Próximamente', description, badge
 
   return (
     <main>
-      <SEO title={seoTitle || `${title} | DataBrains`} description={seoDescription || pageDescription} />
+      <SEO title={seoTitle || `${title} | DataBrains`} description={seoDescription || pageDescription} noindex />
       <Hero
         eyebrow={badge}
         title={title}

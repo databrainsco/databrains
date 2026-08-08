@@ -318,6 +318,10 @@ function AboutSection() {
             <img
               src={teamImage}
               alt="Equipo de consultoría tecnológica colaborando alrededor de una laptop"
+              width={1200}
+              height={676}
+              loading="lazy"
+              decoding="async"
               className="h-full min-h-[360px] w-full object-cover"
             />
             <div className="absolute left-7 top-7 rounded-xl bg-white/90 p-5 shadow-xl backdrop-blur">
@@ -484,7 +488,20 @@ export default function Home() {
     <>
       <SEO
         title="Inicio | DataBrains"
-        description="Transformamos ideas en tecnología efectiva con software, nube, datos, IA y consultoría digital."
+        description="Transformamos ideas en tecnología efectiva. Software a la medida, nube, DevOps, Data Science, IA, blockchain y soluciones digitales para empresas y emprendedores."
+        keywords="DataBrains, consultoría tecnológica, software a la medida, nube, DevOps, Data Science, IA, blockchain, emprendedores, México"
+        jsonLd={{
+          '@type': 'ProfessionalService',
+          '@id': 'https://www.data-brains.net/#service',
+          name: 'DataBrains',
+          description:
+            'Consultoría tecnológica y desarrollo de soluciones digitales para empresas y emprendedores.',
+          url: 'https://www.data-brains.net/',
+          image: 'https://www.data-brains.net/og-image.jpg',
+          areaServed: { '@type': 'Country', name: 'Mexico' },
+          availableLanguage: 'es',
+          provider: { '@id': 'https://www.data-brains.net/#organization' },
+        }}
       />
       <main className="overflow-hidden bg-white">
         <section className="relative bg-white px-5 py-6 lg:px-8 lg:py-8">

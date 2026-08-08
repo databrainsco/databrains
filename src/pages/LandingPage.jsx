@@ -11,15 +11,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import SEO from '../components/SEO'
 import heroImage from '../assets/images/pages/landing/hero.jpg'
-import feature1 from '../assets/images/pages/landing/feature-1.png'
-import feature2 from '../assets/images/pages/landing/feature-2.png'
-import feature3 from '../assets/images/pages/landing/feature-3.png'
-import feature4 from '../assets/images/pages/landing/feature-4.png'
+import feature1 from '../assets/images/pages/landing/feature-1.webp'
+import feature2 from '../assets/images/pages/landing/feature-2.webp'
+import feature3 from '../assets/images/pages/landing/feature-3.webp'
+import feature4 from '../assets/images/pages/landing/feature-4.webp'
 import usecase1 from '../assets/images/pages/landing/usecase-1.jpg'
 import usecase2 from '../assets/images/pages/landing/usecase-2.jpg'
 import usecase3 from '../assets/images/pages/landing/usecase-3.jpg'
 import usecase4 from '../assets/images/pages/landing/usecase-4.jpg'
-import ctaDevices from '../assets/images/pages/landing/cta-devices.png'
+import ctaDevices from '../assets/images/pages/landing/cta-devices.webp'
 
 const features = [
   {
@@ -170,6 +170,10 @@ export default function LandingPage() {
                 <img
                   src={heroImage}
                   alt="Escritorio con laptop mostrando una landing page estratégica"
+                  width={960}
+                  height={640}
+                  decoding="async"
+                  fetchPriority="high"
                   className="h-auto w-full object-cover object-center"
                 />
               </div>
@@ -270,6 +274,8 @@ export default function LandingPage() {
               <img
                 src={ctaDevices}
                 alt=""
+                loading="lazy"
+                decoding="async"
                 className="relative z-10 h-full w-full object-contain object-left-bottom opacity-95"
               />
             </div>

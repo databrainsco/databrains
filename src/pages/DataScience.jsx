@@ -29,7 +29,7 @@ import {
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/datascience/hero.jpg'
-import ctaImage from '../assets/images/pages/datascience/cta-person.png'
+import ctaImage from '../assets/images/pages/datascience/cta-person.webp'
 import bi1 from '../assets/images/pages/datascience/bi-1.jpg'
 import bi2 from '../assets/images/pages/datascience/bi-2.jpg'
 import bi3 from '../assets/images/pages/datascience/bi-3.jpg'

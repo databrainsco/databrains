@@ -33,7 +33,7 @@ import {
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/blockchain/hero.jpg'
-import ctaImage from '../assets/images/pages/blockchain/cta-person.png'
+import ctaImage from '../assets/images/pages/blockchain/cta-person.webp'
 import resultsImage from '../assets/images/pages/blockchain/results.jpg'
 import carousel1 from '../assets/images/pages/blockchain/carousel-1.jpg'
 import carousel2 from '../assets/images/pages/blockchain/carousel-2.jpg'

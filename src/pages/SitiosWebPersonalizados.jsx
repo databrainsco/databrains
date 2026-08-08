@@ -142,6 +142,10 @@ export default function SitiosWebPersonalizados() {
               <img
                 src={heroImage}
                 alt="Sitio web profesional mostrado en laptop, monitor, tablet y celular"
+                width={960}
+                height={640}
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full rounded-2xl object-cover object-center"
               />
             </div>

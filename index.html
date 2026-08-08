@@ -3,18 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataBrains | Transformamos ideas en tecnología efectiva</title>
     <meta
       name="description"
-      content="Transformamos ideas en tecnologia efectiva para empresas y emprendedores."
+      content="Consultoría tecnológica para empresas y emprendedores: software a la medida, nube, DevOps, Data Science, IA, blockchain, sitios web, e-commerce y branding."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="DataBrains" />
+    <meta name="theme-color" content="#23949C" />
+    <link rel="canonical" href="https://www.data-brains.net/" />
+    <link rel="alternate" type="text/plain" title="LLM context" href="https://www.data-brains.net/llms.txt" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DataBrains" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content="DataBrains | Transformamos ideas en tecnología efectiva" />
+    <meta
+      property="og:description"
+      content="Consultoría tecnológica para empresas y emprendedores: software, nube, datos, IA y soluciones digitales."
+    />
+    <meta property="og:url" content="https://www.data-brains.net/" />
+    <meta property="og:image" content="https://www.data-brains.net/og-image.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@databrainsagent" />
+    <meta name="twitter:title" content="DataBrains | Transformamos ideas en tecnología efectiva" />
+    <meta
+      name="twitter:description"
+      content="Consultoría tecnológica para empresas y emprendedores: software, nube, datos, IA y soluciones digitales."
+    />
+    <meta name="twitter:image" content="https://www.data-brains.net/og-image.jpg" />
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#23949C" />
-    <title>DataBrains</title>
+
+    <!-- Critical CSS: paints brand + headline before JS (FCP). -->
+    <style>
+      html, body { margin: 0; background: #fff; color: #31454E; }
+      #app-boot {
+        font-family: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        min-height: 100vh;
+      }
+      #app-boot__bar {
+        border-bottom: 1px solid #f3f4f6;
+        padding: 0.85rem 1.25rem;
+      }
+      #app-boot__brand { font-weight: 700; font-size: 1.35rem; letter-spacing: 0; }
+      #app-boot__brand span:last-child { color: #23949C; }
+      #app-boot__main {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 3.5rem 1.25rem 2rem;
+      }
+      #app-boot__eyebrow {
+        margin: 0;
+        color: #23949C;
+        font-weight: 800;
+        font-size: 1.15rem;
+      }
+      #app-boot__title {
+        margin: 1rem 0 0;
+        max-width: 18ch;
+        font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+        font-weight: 800;
+        line-height: 1.05;
+      }
+      #app-boot__lead {
+        margin: 1.25rem 0 0;
+        max-width: 42ch;
+        font-size: 1rem;
+        line-height: 1.65;
+        color: rgba(49, 69, 78, 0.8);
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.data-brains.net/#organization",
+            "name": "DataBrains",
+            "url": "https://www.data-brains.net",
+            "logo": "https://www.data-brains.net/apple-touch-icon.png",
+            "description": "Consultoría tecnológica para empresas y emprendedores.",
+            "sameAs": [
+              "https://www.linkedin.com/in/data-brains-87a008428/",
+              "https://x.com/databrainsagent"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.data-brains.net/#website",
+            "url": "https://www.data-brains.net",
+            "name": "DataBrains",
+            "inLanguage": "es-MX",
+            "publisher": { "@id": "https://www.data-brains.net/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="app-boot">
+        <div id="app-boot__bar">
+          <div id="app-boot__brand"><span>DAta</span><span>Brains</span></div>
+        </div>
+        <main id="app-boot__main">
+          <p id="app-boot__eyebrow">DAtaBrains</p>
+          <h1 id="app-boot__title">Transformamos ideas en tecnología efectiva</h1>
+          <p id="app-boot__lead">
+            Desarrollamos soluciones de software, datos e IA que impulsan la eficiencia,
+            optimizan procesos y generan resultados medibles para tu negocio.
+          </p>
+        </main>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

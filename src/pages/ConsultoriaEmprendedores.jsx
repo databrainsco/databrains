@@ -118,6 +118,10 @@ function HeroSection() {
           <img
             src={heroImage}
             alt="Consultora reunida con emprendedores para definir una estrategia digital"
+            width={960}
+            height={700}
+            decoding="async"
+            fetchPriority="high"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-white via-white/85 to-transparent" />
@@ -267,6 +271,8 @@ function CTASection() {
           <img
             src={ctaImage}
             alt="Ilustración de una sesión de consultoría digital entre una consultora y un emprendedor"
+            loading="lazy"
+            decoding="async"
             className="max-h-[250px] w-full max-w-[440px] object-contain"
           />
         </div>

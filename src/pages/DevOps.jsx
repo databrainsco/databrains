@@ -20,7 +20,7 @@ import {
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/devops/hero.jpg'
-import ctaImage from '../assets/images/pages/devops/cta-person.png'
+import ctaImage from '../assets/images/pages/devops/cta-person.webp'
 import beforeImage from '../assets/images/pages/devops/before.jpg'
 import afterImage from '../assets/images/pages/devops/after.jpg'
 import carousel1 from '../assets/images/pages/devops/carousel-1.jpg'

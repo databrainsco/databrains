@@ -201,6 +201,10 @@ function HeroSection() {
             <img
               src={heroImage}
               alt="Equipo empresarial revisando soluciones tecnológicas en una laptop"
+              width={960}
+              height={640}
+              decoding="async"
+              fetchPriority="high"
               className="h-[292px] w-full object-cover lg:h-[420px]"
             />
             <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white/45 to-transparent" />
@@ -416,6 +420,8 @@ function FinalCTA() {
         <img
           src={ctaImage}
           alt="Profesional trabajando con laptop en entorno tecnológico empresarial"
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#087b88] via-[#0b8d99]/85 to-transparent" />

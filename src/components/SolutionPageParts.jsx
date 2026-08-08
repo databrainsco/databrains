@@ -69,7 +69,15 @@ export function SolutionHero({ label, title, subtitle, description, heroImage, h
 
         <div className="relative">
           <div className="relative overflow-hidden rounded-xl shadow-[0_22px_48px_rgba(49,69,78,0.18)]">
-            <img src={heroImage} alt={heroAlt} className="h-[292px] w-full object-cover object-center lg:h-[420px]" />
+            <img
+              src={heroImage}
+              alt={heroAlt}
+              width={960}
+              height={640}
+              decoding="async"
+              fetchPriority="high"
+              className="h-[292px] w-full object-cover object-center lg:h-[420px]"
+            />
             <div className="absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-white/25 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 h-2.5 bg-gradient-to-r from-databrains-teal to-databrains-aqua lg:h-3" />
           </div>
@@ -504,6 +512,8 @@ function BeforeAfterCard({ label, image, alt, variant }) {
         <img
           src={image}
           alt={alt}
+          loading="lazy"
+          decoding="async"
           className={`aspect-square w-full object-cover object-center ${isBefore ? 'grayscale' : ''}`}
         />
       </div>
@@ -622,7 +632,7 @@ export function PhotoCardGrid({ title, subtitle, items }) {
           {items.map((item) => (
             <article key={item.title} className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-[0_10px_26px_rgba(49,69,78,0.08)]">
               <div className="relative aspect-[16/10] overflow-hidden">
-                <img src={item.image} alt={item.title} className="h-full w-full object-cover object-top" />
+                <img src={item.image} alt={item.title} className="h-full w-full object-cover object-top" loading="lazy" decoding="async" />
               </div>
               <div className="relative px-5 pb-5 pt-8">
                 <div className="absolute -top-6 left-5 flex h-12 w-12 items-center justify-center rounded-full border-4 border-white bg-databrains-teal text-white shadow-md">
@@ -864,6 +874,8 @@ function CTACutoutVisual({ image, floatingIcons, size = 'default' }) {
       <img
         src={image}
         alt=""
+        loading="lazy"
+        decoding="async"
         className={`pointer-events-none absolute bottom-0 left-1/2 z-[2] w-auto -translate-x-1/2 object-contain object-bottom drop-shadow-[0_8px_24px_rgba(0,0,0,0.22)] ${
           isLarge
             ? 'max-h-full max-w-full lg:max-h-[104%] lg:max-w-[102%]'
@@ -895,6 +907,8 @@ function CTAPhotoVisual({ image, floatingIcons }) {
       <img
         src={image}
         alt=""
+        loading="lazy"
+        decoding="async"
         className="pointer-events-none absolute -right-[4%] top-0 z-[1] h-[112%] w-[112%] max-w-none object-cover object-[68%_32%] lg:-right-[2%] lg:object-[70%_28%]"
         style={{
           WebkitMaskImage: CTA_PHOTO_MASK,
@@ -924,7 +938,7 @@ function CTAImageVisual({ image, floatingIcons }) {
 
   return (
     <div className="relative flex justify-center">
-      <img src={image} alt="" className="max-h-[280px] w-full max-w-[400px] rounded-xl object-cover object-top" />
+      <img src={image} alt="" className="max-h-[280px] w-full max-w-[400px] rounded-xl object-cover object-top" loading="lazy" decoding="async" />
       {floatingIcons.map((icon, index) => (
         <div
           key={icon.iconName}
@@ -1214,7 +1228,7 @@ export function AudiencePhotoGrid({ title, items }) {
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {items.map((item) => (
             <article key={item.title} className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-[0_10px_26px_rgba(49,69,78,0.08)]">
-              <img src={item.image} alt={item.title} className="h-32 w-full object-cover object-top" />
+              <img src={item.image} alt={item.title} className="h-32 w-full object-cover object-top" loading="lazy" decoding="async" />
               <div className="p-4">
                 <h3 className="font-heading text-sm font-extrabold text-databrains-slate">{item.title}</h3>
                 <p className="mt-2 text-xs leading-5 text-databrains-slate/75">{item.description}</p>
@@ -1271,7 +1285,7 @@ export function ResultsSplitSection({ image, items }) {
   return (
     <section className="bg-databrains-lightGray px-5 py-10 min-[860px]:px-10 lg:px-8 lg:py-14">
       <div className="mx-auto grid max-w-[1320px] items-center gap-10 lg:grid-cols-2">
-        <img src={image} alt="" className="rounded-xl shadow-[0_18px_38px_rgba(49,69,78,0.15)]" />
+        <img src={image} alt="" className="rounded-xl shadow-[0_18px_38px_rgba(49,69,78,0.15)]" loading="lazy" decoding="async" />
         <div className="grid gap-5 sm:grid-cols-2">
           {items.map((item) => (
             <article key={item.title} className="flex items-start gap-3 rounded-xl bg-white p-5 shadow-[0_10px_26px_rgba(49,69,78,0.08)]">
@@ -1297,7 +1311,7 @@ export function FeatureIllustrationGrid({ items }) {
         <div className="grid gap-6 sm:grid-cols-2">
           {items.map((item) => (
             <article key={item.title} className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-[0_10px_26px_rgba(49,69,78,0.08)]">
-              <img src={item.image} alt={item.title} className="h-40 w-full object-cover object-top" />
+              <img src={item.image} alt={item.title} className="h-40 w-full object-cover object-top" loading="lazy" decoding="async" />
               <div className="p-6">
                 <h3 className="font-heading text-base font-extrabold text-databrains-slate">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-databrains-slate/75">{item.description}</p>

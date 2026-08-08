@@ -1,9 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { nav } from '../data/navigation'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faChevronDown, faXmark } from '@fortawesome/free-solid-svg-icons'
 import DataBrainsLogo from './DataBrainsLogo'
+
+function ChevronIcon({ className = '' }) {
+  return (
+    <svg className={className} width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+      <path d="M2.5 4.25L6 7.75L9.5 4.25" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function MenuIcon({ open }) {
+  return open ? (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  ) : (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M3.5 5.5H16.5M3.5 10H16.5M3.5 14.5H16.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  )
+}
 
 export default function Navbar() {
   const [openMobile, setOpenMobile] = useState(false)
@@ -59,7 +77,7 @@ export default function Navbar() {
                   aria-haspopup="true"
                 >
                   {dropdown.label}
-                  <FontAwesomeIcon icon={faChevronDown} className={`text-xs transition duration-300 ${openDropdown === dropdown.id ? 'rotate-180' : ''}`} />
+                  <ChevronIcon className={`transition duration-300 ${openDropdown === dropdown.id ? 'rotate-180' : ''}`} />
                 </button>
 
                 {openDropdown === dropdown.id && (
@@ -78,7 +96,6 @@ export default function Navbar() {
                             }`
                           }
                         >
-                          {item.icon && <FontAwesomeIcon icon={item.icon} className="mr-3 w-4 text-databrains-teal" />}
                           {item.label}
                         </NavLink>
                       ))}
@@ -100,7 +117,7 @@ export default function Navbar() {
             aria-label={openMobile ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={openMobile}
           >
-            <FontAwesomeIcon icon={openMobile ? faXmark : faBars} />
+            <MenuIcon open={openMobile} />
           </button>
         </div>
       </div>
@@ -119,7 +136,7 @@ export default function Navbar() {
                     aria-expanded={openMobileSection === dropdown.id}
                   >
                     {dropdown.label}
-                    <FontAwesomeIcon icon={faChevronDown} className={`text-xs transition duration-300 ${openMobileSection === dropdown.id ? 'rotate-180' : ''}`} />
+                    <ChevronIcon className={`transition duration-300 ${openMobileSection === dropdown.id ? 'rotate-180' : ''}`} />
                   </button>
                   {openMobileSection === dropdown.id && (
                     <div className="mt-2 space-y-1">
@@ -128,7 +145,6 @@ export default function Navbar() {
                       </NavLink>
                       {dropdown.items.map((item) => (
                         <NavLink key={item.to} to={item.to} className="flex items-center rounded-2xl px-3 py-2 text-sm text-databrains-slate/80 hover:bg-databrains-lightGray">
-                          {item.icon && <FontAwesomeIcon icon={item.icon} className="mr-3 w-4 text-databrains-teal" />}
                           {item.label}
                         </NavLink>
                       ))}

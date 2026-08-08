@@ -18,7 +18,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import SEO from '../components/SEO'
 import heroImage from '../assets/images/pages/emprendedores/tienda-online-hero.jpg'
-import ctaCartImage from '../assets/images/pages/emprendedores/tienda-online-cta-cart.png'
+import ctaCartImage from '../assets/images/pages/emprendedores/tienda-online-cta-cart.webp'
 
 const whyOnline = [
   {
@@ -154,6 +154,10 @@ export default function TiendaOnline() {
               <img
                 src={heroImage}
                 alt="Tienda online de moda mostrada en laptop, celular y tablet"
+                width={960}
+                height={640}
+                decoding="async"
+                fetchPriority="high"
                 className="relative z-10 h-auto w-full rounded-2xl object-cover object-center"
               />
             </div>
@@ -268,6 +272,8 @@ export default function TiendaOnline() {
               <img
                 src={ctaCartImage}
                 alt=""
+                loading="lazy"
+                decoding="async"
                 className="relative z-10 h-full w-full object-contain object-left-bottom opacity-95"
               />
             </div>

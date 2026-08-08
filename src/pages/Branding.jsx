@@ -17,7 +17,7 @@ import branding4 from '../assets/images/pages/emprendedores/branding-4.jpg'
 import branding5 from '../assets/images/pages/emprendedores/branding-5.jpg'
 import brandingShowcase from '../assets/images/pages/emprendedores/branding-showcase.jpg'
 import brandingPresentation from '../assets/images/pages/emprendedores/branding-presentation.jpg'
-import brandingCtaArt from '../assets/images/pages/emprendedores/branding-cta-bag-cup.png'
+import brandingCtaArt from '../assets/images/pages/emprendedores/branding-cta-bag-cup.webp'
 
 const benefits = [
   {
@@ -151,6 +151,10 @@ export default function Branding() {
               <img
                 src={brandingShowcase}
                 alt="Entregables de branding en web, redes sociales, tarjetas, empaque y vaso"
+                width={960}
+                height={640}
+                decoding="async"
+                fetchPriority="high"
                 className="h-auto w-full rounded-2xl object-cover object-center"
               />
             </div>
@@ -283,6 +287,8 @@ export default function Branding() {
               <img
                 src={brandingCtaArt}
                 alt=""
+                loading="lazy"
+                decoding="async"
                 className="relative z-10 h-full w-full object-contain object-left-bottom opacity-95"
               />
             </div>
@@ -297,7 +303,7 @@ export default function Branding() {
                 <div className="absolute left-10 top-16 h-1.5 w-1.5 rounded-full bg-databrains-aqua/50" />
                 <div className="absolute bottom-10 right-8 h-2.5 w-2.5 rounded-full bg-databrains-teal/25" />
               </div>
-              <img src={brandingCtaArt} alt="" className="relative z-10 h-auto w-full object-contain" />
+              <img src={brandingCtaArt} alt="" className="relative z-10 h-auto w-full object-contain" loading="lazy" decoding="async" />
             </div>
             <div className="max-w-xl text-center lg:max-w-[560px] lg:text-left">
               <p className="font-heading text-2xl font-extrabold leading-snug text-databrains-slate md:text-3xl">

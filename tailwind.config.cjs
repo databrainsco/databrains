@@ -15,8 +15,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        heading: ['"Exo 2"', 'sans-serif'],
-        body: ['"IBM Plex Sans"', 'sans-serif'],
+        heading: ['"Exo 2"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        body: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

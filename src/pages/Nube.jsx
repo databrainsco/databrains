@@ -18,7 +18,7 @@ import {
   FinalCTABlock,
 } from '../components/SolutionPageParts'
 import heroImage from '../assets/images/pages/nube/hero.jpg'
-import ctaImage from '../assets/images/pages/nube/cta-person.png'
+import ctaImage from '../assets/images/pages/nube/cta-person.webp'
 import carousel1 from '../assets/images/pages/nube/carousel-1.jpg'
 import carousel2 from '../assets/images/pages/nube/carousel-2.jpg'
 import carousel3 from '../assets/images/pages/nube/carousel-3.jpg'

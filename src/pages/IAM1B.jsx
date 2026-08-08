@@ -27,7 +27,7 @@ import pain1 from '../assets/images/pages/emprendedores/ia/pain-1.jpg'
 import pain2 from '../assets/images/pages/emprendedores/ia/pain-2.jpg'
 import pain3 from '../assets/images/pages/emprendedores/ia/pain-3.jpg'
 import pain4 from '../assets/images/pages/emprendedores/ia/pain-4.jpg'
-import ctaRocket from '../assets/images/pages/emprendedores/ia/cta-rocket.png'
+import ctaRocket from '../assets/images/pages/emprendedores/ia/cta-rocket.webp'
 
 const helpItems = [
   {
@@ -183,6 +183,10 @@ export default function IAM1B() {
                 <img
                   src={heroImage}
                   alt="Emprendedora usando laptop en su negocio"
+                  width={960}
+                  height={640}
+                  decoding="async"
+                  fetchPriority="high"
                   className="h-auto w-full object-cover object-center"
                 />
               </div>
@@ -349,7 +353,7 @@ export default function IAM1B() {
           </div>
           <div className="relative z-10 mx-auto flex max-w-[1100px] flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
             <div className="w-[70%] max-w-[280px] lg:w-[32%]">
-              <img src={ctaRocket} alt="" className="h-auto w-full object-contain" />
+              <img src={ctaRocket} alt="" className="h-auto w-full object-contain" loading="lazy" decoding="async" />
             </div>
             <div className="max-w-xl text-center lg:max-w-[560px] lg:text-left">
               <p className="font-heading text-2xl font-extrabold leading-snug text-databrains-slate md:text-3xl">
